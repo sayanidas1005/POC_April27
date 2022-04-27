@@ -1,0 +1,120 @@
+<!-- <p>display works!</p> -->
+
+<!-- <body>
+  <div class="container-fluid">
+    <h1 class="text-center mt-4 mb-4" style="color: #3491cf; font-family: 'Poppins', sans-serif;">Display Page</h1>
+
+
+    <div class="container">
+      <select [(ngModel)]="selectedSheetName" (change)="selectChangeHandler($event)">
+        <option [ngValue]="null" selected disabled>Select Sheet</option>
+        <option *ngFor="let val of dataSheets" [value]="val.Population">{{val.Population}}</option>
+      </select>
+      <p><span>You selected:</span><b>{{selectedSheet}}</b></p> -->
+
+
+<!-- comment out this part- for html change -->
+
+<!-- <p *ngFor='let sheet of dataSheets'>
+            {{sheet.Population}}
+            {{sheet.Year}}
+         </p> -->
+
+<!-- comment out the part till here -->
+
+<!-- <div *ngIf="rowData!=null" class="text-center">
+        <ag-grid-angular style="width: 800px; height: 800px;" class="ag-theme-balham" [rowData]="rowData"
+          (gridReady)="onGridReady($event)" [editType]="'fullRow'" (rowEditingStopped)="onRowEditingStopped"
+          [frameworkComponents]="frameworkComponents" [columnDefs]="columnDefs">
+        </ag-grid-angular>
+      </div>
+
+    </div>
+
+    <div style="text-align: right;">
+      <a [routerLink]="['/home']" class="btn btn-primary">Back</a>
+    </div>
+  </div>
+</body> -->
+
+
+
+
+
+
+
+
+<body>
+  <!-- header -->
+
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a [routerLink]="['/display']">Display</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" [routerLink]="['/home']">Home</a></li>
+          <li><a class="nav-link scrollto" [routerLink]="['/display']">Display</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+          data-aos="fade-up" data-aos-delay="200">
+          <h1>Grid Display</h1>
+          <h2>The Sheet data is displayed!</h2>
+
+
+        </div>
+        
+        <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                </div> -->
+      </div>
+      <!-- code implemented from here -->
+      <div class="row">
+
+        <div class="container">
+          <select [(ngModel)]="selectedSheetName" (change)="selectChangeHandler($event)">
+            <option [ngValue]="null" selected disabled>Select Sheet</option>
+            <option *ngFor="let val of dataSheets" [value]="val.Population">{{val.Population}}</option>
+          </select>
+          <p><span>You selected:</span><b>{{selectedSheet}}</b></p>
+
+          <!-- <p *ngFor='let sheet of dataSheets'>
+                {{sheet.Population}}
+                {{sheet.Year}}
+             </p> -->
+
+          <div *ngIf="rowData!=null" class="text-center">
+            <ag-grid-angular style="width: 800px; height: 350px;" class="ag-theme-balham" [rowData]="rowData"
+              (gridReady)="onGridReady($event)" [editType]="'fullRow'" (rowEditingStopped)="onRowEditingStopped"
+              [frameworkComponents]="frameworkComponents" [columnDefs]="columnDefs">
+            </ag-grid-angular>
+          </div>
+
+        </div>
+
+        <!-- <div style="text-align: right;">
+          <a [routerLink]="['/home']" class="btn btn-primary">Back</a>
+        </div> -->
+      </div>
+
+      <!-- code implemented till here -->
+    </div>
+
+  </section><!-- End Hero -->
+
+
+</body>
